@@ -2,6 +2,7 @@
 npm-debug.log
 .DS_Store
 /*.env
+/Public/css/styles_Angela.css
 
 # Logs
 logs

@@ -1,5 +1,6 @@
 //- App generals //
 //jshint esversion:6
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const https = require('https');
@@ -13,7 +14,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('Public'));
 //--
 app.set('view engine', 'ejs');
-mongoose.connect('mongodb+srv://admin-arneto19:<PASSWORD>@cluster0.wx5ya.mongodb.net/todolistDB', {
+mongoose.connect(`mongodb+srv://admin-${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.wx5ya.mongodb.net/todolistDB`, {
   useNewUrlParser: true
 });
 
